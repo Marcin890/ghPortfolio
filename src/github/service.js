@@ -1,6 +1,8 @@
 import { GithubRepo } from "./model";
 
 const RESPONSE_URL = "https://api.github.com/users/Marcin890/repos";
+const POST_URL =
+  "https://raw.githubusercontent.com/Marcin890/ghPortfolio/master/blog/";
 const FORBIDDEN_REPOS = ["bieszczady"];
 
 // const convert = ({ name, stargazers_count: stars }) => {
@@ -28,5 +30,17 @@ export default async function getRepos() {
   } catch (err) {
     console.log(err);
     return [];
+  }
+}
+export async function getBlogPost(name = "1.md") {
+  try {
+    const response = await fetch(`${POST_URL}${name}`);
+    if (response.ok) {
+      return await response.text();
+    }
+    throw Error("Response");
+  } catch (err) {
+    console.log(err);
+    return "";
   }
 }

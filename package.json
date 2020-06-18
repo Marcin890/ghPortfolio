@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "markdown-element": "^2.0.2"
   }
 }
