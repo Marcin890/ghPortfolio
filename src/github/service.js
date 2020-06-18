@@ -32,7 +32,7 @@ export default async function getRepos() {
     return [];
   }
 }
-export async function getBlogPost(name = "1.md") {
+export async function getBlogPost(name = "2.md") {
   try {
     const response = await fetch(`${POST_URL}${name}`);
     if (response.ok) {
